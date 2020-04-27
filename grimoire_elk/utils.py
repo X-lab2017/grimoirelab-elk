@@ -44,8 +44,8 @@ from perceval.backends.core.dockerhub import DockerHub, DockerHubCommand
 from perceval.backends.finos.finosmeetings import FinosMeetings, FinosMeetingsCommand
 from perceval.backends.core.gerrit import Gerrit, GerritCommand
 from perceval.backends.core.git import Git, GitCommand
+from perceval.backends.core.gitee import Gitee, GiteeCommand
 from perceval.backends.core.github import GitHub, GitHubCommand
-from perceval.backends.core.githubql import GitHubQL, GitHubQLCommand
 from perceval.backends.core.gitlab import GitLab, GitLabCommand
 from perceval.backends.core.gitter import Gitter, GitterCommand
 from perceval.backends.core.googlehits import GoogleHits, GoogleHitsCommand
@@ -90,8 +90,8 @@ from .enriched.finosmeetings import FinosMeetingsEnrich
 from .enriched.functest import FunctestEnrich
 from .enriched.gerrit import GerritEnrich
 from .enriched.git import GitEnrich
+from .enriched.gitee import GiteeEnrich
 from .enriched.github import GitHubEnrich
-from .enriched.githubql import GitHubQLEnrich
 from .enriched.github2 import GitHubEnrich2
 from .enriched.gitlab import GitLabEnrich
 from .enriched.gitter import GitterEnrich
@@ -132,8 +132,8 @@ from .raw.finosmeetings import FinosMeetingsOcean
 from .raw.functest import FunctestOcean
 from .raw.gerrit import GerritOcean
 from .raw.git import GitOcean
+from .raw.gitee import GiteeOcean
 from .raw.github import GitHubOcean
-from .raw.githubql import GitHubQLOcean
 from .raw.gitlab import GitLabOcean
 from .raw.gitter import GitterOcean
 from .raw.google_hits import GoogleHitsOcean
@@ -231,8 +231,8 @@ def get_connectors():
             "functest": [Functest, FunctestOcean, FunctestEnrich, FunctestCommand],
             "gerrit": [Gerrit, GerritOcean, GerritEnrich, GerritCommand],
             "git": [Git, GitOcean, GitEnrich, GitCommand],
+            "gitee": [Gitee, GiteeOcean, GiteeEnrich, GiteeCommand],
             "github": [GitHub, GitHubOcean, GitHubEnrich, GitHubCommand],
-            "githubql": [GitHubQL, GitHubQLOcean, GitHubQLEnrich, GitHubQLCommand],
             "github2": [GitHub, GitHubOcean, GitHubEnrich2, GitHubCommand],
             "gitlab": [GitLab, GitLabOcean, GitLabEnrich, GitLabCommand],
             "gitter": [Gitter, GitterOcean, GitterEnrich, GitterCommand],
@@ -290,7 +290,6 @@ def get_elastic(url, es_index, clean=None, backend=None, es_aliases=None, mappin
 def get_kibiter_version(url):
     """
         Return kibiter major number version
-
         The url must point to the Elasticsearch used by Kibiter
     """
 
