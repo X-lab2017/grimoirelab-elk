@@ -44,7 +44,6 @@ from perceval.backends.core.dockerhub import DockerHub, DockerHubCommand
 from perceval.backends.finos.finosmeetings import FinosMeetings, FinosMeetingsCommand
 from perceval.backends.core.gerrit import Gerrit, GerritCommand
 from perceval.backends.core.git import Git, GitCommand
-from perceval.backends.core.gitee import Gitee, GiteeCommand
 from perceval.backends.core.github import GitHub, GitHubCommand
 from perceval.backends.core.gitlab import GitLab, GitLabCommand
 from perceval.backends.core.gitter import Gitter, GitterCommand
@@ -74,6 +73,7 @@ from perceval.backends.mozilla.kitsune import Kitsune, KitsuneCommand
 from perceval.backends.mozilla.mozillaclub import MozillaClub, MozillaClubCommand
 from perceval.backends.mozilla.remo import ReMo, ReMoCommand
 from perceval.backends.opnfv.functest import Functest, FunctestCommand
+from perceval.backends.gitee.gitee import Gitee, GiteeCommand
 # Connectors for EnrichOcean
 from .enriched.askbot import AskbotEnrich
 from .enriched.bugzilla import BugzillaEnrich
